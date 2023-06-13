@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import java.sql.SQLException;
+=======
+>>>>>>> refs/remotes/origin/master
 import java.util.*;
 import java.util.Scanner;
 import java.util.Locale.Category;
@@ -13,7 +16,10 @@ public class MainWin {
     public static int ispoor; // 判别学生身份信息
     public static int account = 0; // 用做数组类下标
     public static int TXb; // 用于计数
+<<<<<<< HEAD
     public static TestJavaJDBC testJavaJDBC = new TestJavaJDBC();
+=======
+>>>>>>> refs/remotes/origin/master
 
     public static void main(String[] args) {
         try {
@@ -22,12 +28,17 @@ public class MainWin {
             System.out.println("请输入密码");
             password = txb_sc.next();
             if (password.equals("123")) {
+<<<<<<< HEAD
                 try {
                     testJavaJDBC.txb_nb();
                 } catch (ClassNotFoundException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
+=======
+                TestJavaJDBC testJavaJDBC = new TestJavaJDBC();
+                testJavaJDBC.txb_nb();
+>>>>>>> refs/remotes/origin/master
                 do {
                     System.out.println(
                             "欢迎进入学生资助系统:\n*****1-身份认证*****\n*****2-退出系统*****\n*****3-显示达标人数*****\n*****4-显示未达标人数*****\n*****5-以下是存储名单*****");
@@ -53,12 +64,22 @@ public class MainWin {
                                     txb_sex = txb_sc.next();
                                     System.out.println("请输入你的名字");
                                     name = txb_sc.next();
+<<<<<<< HEAD
                                     System.out.println("请输入你的学号");
                                     ID = txb_sc.nextInt();
                                     System.out.println("请输入你的班级");
                                     txb_classes = txb_sc.nextInt();
                                     Student txb_St = new Student(txb_sex, name, ID, txb_classes);
                                     testJavaJDBC.txb_insert(ID, name);
+=======
+                                    testJavaJDBC.txb_insert(ID, name);
+                                    System.out.println("请输入你的学号");
+                                    ID = txb_sc.nextInt();
+                                     testJavaJDBC.txb_insert(ID, name);
+                                    System.out.println("请输入你的班级");
+                                    txb_classes = txb_sc.nextInt();
+                                    Student txb_St = new Student(txb_sex, name, ID, txb_classes);
+>>>>>>> refs/remotes/origin/master
                                     System.out.println(txb_St.get_position());
                                     txb_St.txb_grade();
                                     txb_St.txb_getAverage();
@@ -69,10 +90,18 @@ public class MainWin {
                                     st.txb_identity(ispoor);
                                     System.out.println("请输入你的学号");
                                     ID = txb_sc.nextInt();
+<<<<<<< HEAD
                                     System.out.println("请输入你的名字");
                                     name = txb_sc.next();
                                     Student txb_St = new Student(txb_sex, name, ID, txb_classes);
                                     testJavaJDBC.txb_insert(txb_St.ID,txb_St.name);
+=======
+                                     testJavaJDBC.txb_insert(ID, name);
+                                    System.out.println("请输入你的名字");
+                                    name = txb_sc.next();
+                                     testJavaJDBC.txb_insert(ID, name);
+                                    Student txb_St = new Student(txb_sex, name, ID, txb_classes);
+>>>>>>> refs/remotes/origin/master
                                     txb_St.Can_xb = true;
                                     account++;
 
@@ -83,10 +112,13 @@ public class MainWin {
                             }
                         case 2:
                             System.out.println("已退出系统");
+<<<<<<< HEAD
                             // 完成后关闭
                             testJavaJDBC.rs.close();
                             testJavaJDBC.stmt.close();
                             testJavaJDBC.conn.close();
+=======
+>>>>>>> refs/remotes/origin/master
                             txb_exist = false;
                             break;
                         case 3:
@@ -112,7 +144,10 @@ public class MainWin {
                             break;
                         case 5:
                             System.out.println("该存储名单名字如下:\n");
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/master
                             testJavaJDBC.txb_show();
                         default:
                             System.out.println("按照上述操作指令输入");
@@ -122,12 +157,17 @@ public class MainWin {
                 System.out.println("密码错误");
                 System.exit(0);
             }
+<<<<<<< HEAD
         } catch (SQLException se) {
              //TODO: handle exception
             se.printStackTrace();
 
         //} catch (Exception e) {
         //    System.out.println("操作错误");
+=======
+        } catch (Exception e) {
+            System.out.println("操作错误");
+>>>>>>> refs/remotes/origin/master
         }
 
     }
